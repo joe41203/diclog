@@ -18,6 +18,12 @@ $ docker-compose run web bash
 $ docker-compose up
 ```
 
+at another winder
+
+```
+$ docker-compose exec web ./bin/webpack-dev-server
+```
+
 ```bash
 $ open http://localhost:3000
 ```
