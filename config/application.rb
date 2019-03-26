@@ -22,6 +22,12 @@ module Diclog
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
+    config.generators do |g|
+      g.factory_bot dir: 'spec/factories'
+      g.factory_bot true
+      g.test_framework :rspec, view_specs: false, helper_specs: false, controller_specs: false, routing_specs: false
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
@@ -29,10 +35,5 @@ module Diclog
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-
-    config.generators do |g|
-      g.factory_bot dir: 'spec/factories'
-      g.factory_bot true
-    end
   end
 end
